@@ -1,6 +1,49 @@
+const projetos = [
+    {
+        nome: "Mastermind",
+        url: "https://github.com/MatheusHMafra/Mastermind",
+    },
+];
+const miniprojetos = [
+    {
+        nome: "Mastermind",
+        url: "https://github.com/MatheusHMafra/Mastermind",
+    },
+    {
+        nome: "Portfolio",
+        url: "https://github.com/MatheusHMafra/Portfolio",
+    }
+];
+
+// Projetos
+
+const container1 = document.getElementById('projetos-container');
+
+projetos.forEach(projeto => {
+    const a = document.createElement('a');
+    a.href = projeto.url;
+    a.title = projeto.nome;
+    a.innerHTML = `<img src="https://github-readme-stats.vercel.app/api/pin/?username=MatheusHMafra&repo=${projeto.nome}&show_owner=true&bg_color=94e4c6&hide_border=true">`;
+    container1.appendChild(a);
+});
+
+// Mini Projetos
+
+const container2 = document.getElementById('mini-projetos-container');
+
+miniprojetos.forEach(miniprojeto => {
+    const a = document.createElement('a');
+    a.href = miniprojeto.url;
+    a.title = miniprojeto.nome;
+    a.innerHTML = `<img src="https://github-readme-stats.vercel.app/api/pin/?username=MatheusHMafra&repo=${miniprojeto.nome}&show_owner=true&bg_color=94e4c6&hide_border=true">`;
+    container2.appendChild(a);
+});
+
+// Enviar via discord
+/*
 function enviarMensagem() {
     const request = new XMLHttpRequest();
-    const webhookUrl = 'https://discord.com/api/webhooks/1103511180401704980/ObqpLGe2TKUfQKlG6KTr482o7ggjOinGIGfyGLtJ_1_CmheRLLL3MhHvgR9gHBeTtKdb';
+    const webhookUrl = 'link';
     const form = document.querySelector('form');
     const name = form.querySelector('#name').value;
     const email = form.querySelector('#email').value;
@@ -30,3 +73,4 @@ function enviarMensagem() {
         }
     };
 }
+*/
