@@ -1,15 +1,97 @@
-header {
-    padding: 5px;
+/* Cores */
+:root {
+    --primary-color: #94e4c6;
+    --secondary-color: #3ece98;
+    --text-color: #1d1d1d;
+    --accent-color: #FFFFFF;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+body.dark-mode {
+    --primary-color: #1d1d1d;
+    --secondary-color: #2c2c2c;
+    --text-color: #ffffff;
+    --accent-color: #1d1d1d;
+}
+
+/* Botão de mudar o tema */
+
+.toggle-container {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-top: 10px;
+}
+
+#darkmode-toggle {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+#darkmode-toggle+label {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+#darkmode-toggle+label::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform 0.2s ease-in-out;
+}
+
+#darkmode-toggle:checked+label::after {
+    transform: translateX(20px);
+    background-color: #333;
+}
+#darkmode-toggle:checked+label{
+    background-color: #4e4c4c;
+}
+
+
+
+/* Corpo / header / main / footer */
+header,
+main,
+footer {
+    padding: 10px;
 }
 
 body {
     text-align: center;
-    background-color: #94e4c6;
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+main {
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    background-color: var(--secondary-color);
+}
+
+/* Estilos gerais */
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -18,23 +100,13 @@ h1 {
     text-align: center;
 }
 
-main {
-    margin: 20px auto;
-    max-width: 1260px;
-    background-image: repeating-linear-gradient(to bottom, #a9e9d1, #3ece98);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-}
-
-section {
-    margin-bottom: 20px;
-}
-
 h2 {
     margin-top: 0;
     font-size: 25px;
-    color: #000000;
+}
+
+section {
+    margin: 20px;
 }
 
 ul {
@@ -43,20 +115,20 @@ ul {
     list-style: none;
 }
 
+li {
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
 ul input {
     text-align: center;
     padding: 5px 1px 5px 1px;
 }
 
-li {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
 /* Imagem do perfil */
 #image {
     border-radius: 50%;
-    box-shadow: 0px 0px 15px white;
+    box-shadow: 0px 0px 15px var(--accent-color);
 }
 
 /* Formulário */
@@ -67,6 +139,7 @@ form label {
     text-align: right;
     margin-right: 10px;
     font-weight: bold;
+    color: var(--text-color);
 }
 
 form input[type="text"],
@@ -77,12 +150,12 @@ form textarea {
     padding: 5px;
     border-radius: 5px;
     border: none;
-    background-color: #f7f7f7;
+    background-color: var(--accent-color);
 }
 
 form button {
-    background-color: #94e4c6;
-    color: #000000;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -92,7 +165,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #3e9675;
+    background-color: var(--secondary-color);
 }
 
 form textarea {
@@ -101,7 +174,6 @@ form textarea {
 }
 
 /* Cards dos projetos e mini projetos */
-
 .card-container {
     display: flex;
     flex-wrap: wrap;

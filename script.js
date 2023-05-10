@@ -1,76 +1,67 @@
-const projetos = [
-    {
-        nome: "Mastermind",
-        url: "https://github.com/MatheusHMafra/Mastermind",
-    },
-];
-const miniprojetos = [
-    {
-        nome: "Mastermind",
-        url: "https://github.com/MatheusHMafra/Mastermind",
-    },
-    {
-        nome: "Portfolio",
-        url: "https://github.com/MatheusHMafra/Portfolio",
-    }
-];
+const projetos = [    {        nome: "Mastermind",        url: "https://github.com/MatheusHMafra/Mastermind",    },];
+
+const miniprojetos = [    {        nome: "Mastermind",        url: "https://github.com/MatheusHMafra/Mastermind",    },    {        nome: "Portfolio",        url: "https://github.com/MatheusHMafra/Portfolio",    }];
 
 // Projetos
 
-const container1 = document.getElementById('projetos-container');
+function updateProjetos() {
+    const color = getComputedStyle(document.body).getPropertyValue('--primary-color').replace(/[^a-z0-9]/gi, '');
+    const container1 = document.getElementById('projetos-container');
+    const links1 = container1.getElementsByTagName('a');
 
-projetos.forEach(projeto => {
-    const a = document.createElement('a');
-    a.href = projeto.url;
-    a.title = projeto.nome;
-    a.innerHTML = `<img src="https://github-readme-stats.vercel.app/api/pin/?username=MatheusHMafra&repo=${projeto.nome}&show_owner=true&bg_color=94e4c6&hide_border=true">`;
-    container1.appendChild(a);
-});
+    for (let i = 0; i < links1.length; i++) {
+        const link = links1[i];
+        link.innerHTML = `<img src="https://github-readme-stats.vercel.app/api/pin/?username=MatheusHMafra&repo=${projetos[i].nome}&show_owner=true&bg_color=${color}&hide_border=true">`;
+    }
+}
+
+function createProjetos() {
+    const container1 = document.getElementById('projetos-container');
+
+    projetos.forEach(projeto => {
+        const a = document.createElement('a');
+        a.href = projeto.url;
+        a.title = projeto.nome;
+        container1.appendChild(a);
+    });
+
+    updateProjetos();
+}
+
+createProjetos();
 
 // Mini Projetos
 
-const container2 = document.getElementById('mini-projetos-container');
+function updateMiniProjetos() {
+    const color = getComputedStyle(document.body).getPropertyValue('--primary-color').replace(/[^a-z0-9]/gi, '');
+    const container2 = document.getElementById('mini-projetos-container');
+    const links2 = container2.getElementsByTagName('a');
 
-miniprojetos.forEach(miniprojeto => {
-    const a = document.createElement('a');
-    a.href = miniprojeto.url;
-    a.title = miniprojeto.nome;
-    a.innerHTML = `<img src="https://github-readme-stats.vercel.app/api/pin/?username=MatheusHMafra&repo=${miniprojeto.nome}&show_owner=true&bg_color=94e4c6&hide_border=true">`;
-    container2.appendChild(a);
-});
-
-// Enviar via discord
-/*
-function enviarMensagem() {
-    const request = new XMLHttpRequest();
-    const webhookUrl = 'link';
-    const form = document.querySelector('form');
-    const name = form.querySelector('#name').value;
-    const email = form.querySelector('#email').value;
-    const subject = form.querySelector('#subject').value;
-    const message = form.querySelector('#message').value;
-    const payload = {
-        username: name,
-        embeds: [
-            {
-                title: subject,
-                description: message,
-                footer: {
-                    text: `Sent from ${email}`,
-                },
-            },
-        ],
-    };
-    request.open("POST", webhookUrl)
-    request.setRequestHeader('Content-type', 'application/json');
-
-    request.send(JSON.stringify(payload));
-    request.onreadystatechange = function () {
-        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            console.log("Webhook message sent successfully.");
-        } else if (this.readyState === XMLHttpRequest.DONE && this.status !== 200) {
-            console.error("Error sending webhook message:", this.responseText);
-        }
-    };
+    for (let i = 0; i < links2.length; i++) {
+        const link = links2[i];
+        link.innerHTML = `<img src="https://github-readme-stats.vercel.app/api/pin/?username=MatheusHMafra&repo=${miniprojetos[i].nome}&show_owner=true&bg_color=${color}&hide_border=true">`;
+    }
 }
-*/
+
+function createMiniProjetos() {
+    const container2 = document.getElementById('mini-projetos-container');
+
+    miniprojetos.forEach(miniprojeto => {
+        const a = document.createElement('a');
+        a.href = miniprojeto.url;
+        a.title = miniprojeto.nome;
+        container2.appendChild(a);
+    });
+
+    updateMiniProjetos();
+}
+
+createMiniProjetos();
+
+// Dark Mode on the site
+function toggleMode() {
+    document.body.classList.toggle('light-mode');
+    document.body.classList.toggle('dark-mode');
+    updateProjetos();
+    updateMiniProjetos();
+}

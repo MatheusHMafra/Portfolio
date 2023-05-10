@@ -1,13 +1,13 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="icon" type="image/png" href="imagens/black.png"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagens/black.webp">
     <title>Portfolio</title>
+    <style type="text/css" id="operaUserStyle"></style>
 </head>
 
 <body>
@@ -16,26 +16,42 @@
     </header>
 
     <main>
+        <div class="toggle-container">
+            <input type="checkbox" id="darkmode-toggle" onclick="toggleMode()">
+            <label for="darkmode-toggle"></label>
+        </div>          
         <section>
-            <img id="image" src="https://avatars.githubusercontent.com/u/127265280?s=128&v=4"alt="Imagem de perfil" />
+            <img id="image" src="https://avatars.githubusercontent.com/u/127265280?s=128&amp;v=4" alt="Imagem de perfil">
             <h2>Sobre mim:</h2>
             <ul>
-                <li>Olá, meu nome é Matheus Henrique, tenho <span id="idade">17</span> anos e atualmente estou cursando Sistemas de Internet na faculdade.</li>
+                <li>Olá, meu nome é Matheus, tenho <span id="idade">17</span> anos e atualmente estou cursando Sistemas de Internet na faculdade.</li>
                 <li>Desde jovem, sempre tive fascínio por tecnologia e inovação, o que me motivou a buscar mais conhecimento nesta área.</li>
-                <li>Atualmente, estou trabalhando para aprimorar minhas habilidades técnicas em programação e desenvolvimento de websites.</li> 
+                <li>Atualmente, estou trabalhando para aprimorar minhas habilidades técnicas em programação e desenvolvimento de websites.</li>
                 <li>Meu objetivo é me tornar um profissional completo em tecnologia e contribuir para a inovação em diferentes áreas.</li>
             </ul>
         </section>
-
+        <section>
+            <h2>Formação:</h2>
+            <ul>
+                <li>Ensino médio completo no <a title="Colégio Energia" href="https://energiaitajai.com.br" target="_blank" style="color: blue;">Colégio Energia</a></li><br>
+                <li>Cursando Sistemas de Internet na <a title="Univali" href="https://www.univali.br" target="_blank" style="color: blue;">Univali</a></li>
+            </ul>
+        </section>
         <section>
             <h2>Especialidades:</h2>
             <ul>
-                <a title="HTML"><img src="imagens/html.png" height="50px" width="50px"><h1>HTML</h1></a><br>
-                <a title="CSS"><img src="imagens/css.png" height="50px" width="50px"><h1>CSS</h1></a><br>
-                <a title="C++"><img src="imagens/c++.png" height="50px" width="50px"><h1>C++</h1></a><br>
+                <img src="imagens/html.webp" height="70px" width="70px">
+                <h2>HTML</h2>
+                <img src="imagens/css.webp" height="70px" width="70px">
+                <h2>CSS</h2>
+                <img src="imagens/js.webp" height="70px" width="70px">
+                <h2>JS</h2>
+                <img src="imagens/c++.webp" height="70px" width="70px">
+                <h2>C++</h2>
             </ul>
         </section>
-
+        <!--<section>
+        </section>-->
         <section>
             <h2>Projetos:</h2>
             <div class="card-container" id="projetos-container">
@@ -50,18 +66,21 @@
         <section>
             <h2>Entre em contato</h2>
             <form>
-                <input type="text" id="name" name="name" placeholder="Seu nome" maxlength="50" required><br><br>
-                <input type="email" id="email" name="email" placeholder="Seu email" maxlength="50" required><br><br>
-                <input type="text" id="subject" name="subject" placeholder="Assunto" maxlength="50" required><br><br>
-                <textarea id="message" name="message" placeholder="Mensagem" maxlength="500" required></textarea><br><br>
+                <input type="text" id="name" name="name" placeholder="Seu nome" maxlength="50" required=""><br><br>
+                <input type="email" id="email" name="email" placeholder="Seu email" maxlength="50" required=""><br><br>
+                <input type="text" id="subject" name="subject" placeholder="Assunto" maxlength="50" required=""><br><br>
+                <textarea id="message" name="message" placeholder="Mensagem" maxlength="500"
+                    required=""></textarea><br><br>
                 <button type="button" onclick="enviarMensagem();">Enviar</button>
             </form>
         </section>
     </main>
     <footer>
-        <a href="https://github.com/MatheusHMafra" title="GITHUB" target="_blank" alt="GITHUB"><img src="imagens/github.png" height="50px" width="50px"><h1>GITHUB</h1></a>
+        <a href="https://github.com/MatheusHMafra" title="GITHUB" target="_blank" alt="GITHUB"><img
+                src="imagens/github.webp" height="50px" width="50px">
+            <h1>GITHUB</h1>
+        </a>
     </footer>
     <script src="script.js"></script>
 </body>
-
 </html>
