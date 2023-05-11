@@ -12,6 +12,12 @@ body.dark-mode {
     --text-color: #ffffff;
     --accent-color: #1d1d1d;
 }
+/* Formação trocar cor de acordo com o tema */
+
+.formação{
+    color: var(--text-color);
+}
+
 
 /* Botão de mudar o tema */
 
