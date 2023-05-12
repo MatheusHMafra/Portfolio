@@ -104,9 +104,7 @@ function enviarMensagem() {
       username: "Portfolio",
       embeds: [ myEmbed ]
     }
-    setTimeout(() => {
-        request.send(JSON.stringify(params));
-    }, 300000);
+    request.send(JSON.stringify(params));
     
     // function that converts a color HEX to a valid Discord color
     function hexToDecimal(hex) {
