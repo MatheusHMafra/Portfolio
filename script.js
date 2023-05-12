@@ -82,7 +82,7 @@ function toggleMode() {
 
 // Contate-me parte
 
-const webhookUrl = process.env.WEBHOOK_URL;
+const webhookUrl = process.env.WEBHOOK_LINK;
 
 function enviarMensagem() {
   const nome = document.getElementById("name").value;
