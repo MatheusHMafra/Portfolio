@@ -81,7 +81,7 @@ function toggleMode() {
 }
 
 // Contate-me parte
-
+// why can i do .env files buaa
 // const webhookUrl = process.env.WEBHOOK_LINK;
 
 // function enviarMensagem() {
