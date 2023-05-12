@@ -88,22 +88,28 @@ function enviarMensagem() {
     const assunto = document.getElementById("subject").value;
     const mensagem = document.getElementById("message").value;
 
-    const mensagemJson = {
-        username: nome,
-        embeds: [
-            {
-                title: assunto,
-                description: mensagem,
-                footer: {
-                    text: `Email: ${email}`
-                }
-            }
-        ]
-    };
-    const webhookUrl = "https://discord.com/api/webhooks/1106429683492462653/R9a8JMS9TRBtN-uI62StGXzF_rQ-R28SHPDt4VJGor2NW5vRNSIP26QRoffd24TR1whV";
+    request.open("POST", "https://discord.com/api/webhooks/1106429683492462653/R9a8JMS9TRBtN-uI62StGXzF_rQ-R28SHPDt4VJGor2NW5vRNSIP26QRoffd24TR1whV");
+    request.setRequestHeader('Content-type', 'application/json');
+    
+    var myEmbed = {
+      author: {
+        name: nome,
+      },
+      title: assunto,
+      description: "Email: " + email + "\nMensagem: " + mensagem,
+      color: hexToDecimal("#ff0000")
+    }
+    
+    var params = {
+      username: "Portfolio",
+      embeds: [ myEmbed ]
+    }
     setTimeout(() => {
-        request.open("POST", webhookUrl);
-        request.setRequestHeader('Content-type', 'application/json');
-        request.send(JSON.stringify(mensagemJson));
+        request.send(JSON.stringify(params));
     }, 300000);
+    
+    // function that converts a color HEX to a valid Discord color
+    function hexToDecimal(hex) {
+      return parseInt(hex.replace("#",""), 16)
+    }
 }
