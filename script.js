@@ -81,7 +81,7 @@ function toggleMode() {
 }
 
 // Contate-me parte
-const webhookUrl = https://discord.com/api/webhooks/1106429683492462653/R9a8JMS9TRBtN-uI62StGXzF_rQ-R28SHPDt4VJGor2NW5vRNSIP26QRoffd24TR1whV;
+const webhookUrl = "https://discord.com/api/webhooks/1106429683492462653/R9a8JMS9TRBtN-uI62StGXzF_rQ-R28SHPDt4VJGor2NW5vRNSIP26QRoffd24TR1whV";
 
 function enviarMensagem() {
     const nome = document.getElementById("name").value;
