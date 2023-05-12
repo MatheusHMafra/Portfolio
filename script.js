@@ -81,44 +81,43 @@ function toggleMode() {
 }
 
 // Contate-me parte
-// why can i do .env files buaa
-// const webhookUrl = process.env.WEBHOOK_LINK;
+const webhookUrl = https://discord.com/api/webhooks/1106429683492462653/R9a8JMS9TRBtN-uI62StGXzF_rQ-R28SHPDt4VJGor2NW5vRNSIP26QRoffd24TR1whV;
 
-// function enviarMensagem() {
-//   const nome = document.getElementById("name").value;
-//   const email = document.getElementById("email").value;
-//   const assunto = document.getElementById("subject").value;
-//   const mensagem = document.getElementById("message").value;
+function enviarMensagem() {
+    const nome = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const assunto = document.getElementById("subject").value;
+    const mensagem = document.getElementById("message").value;
   
-//   const mensagemJson = {
-//     username: '$(nome)',
-//     embeds: [
-//       {
-//         title: $(assunto),
-//         description: $(mensagem),
-//         footer: {
-//           text: `Email: ${email}`
-//         }
-//       }
-//     ]
-//   };
+    const mensagemJson = {
+    username: '$(nome)',
+    embeds: [
+        {
+            title: $(assunto),
+            description: $(mensagem),
+            footer: {
+            text: `Email: ${email}`
+            }
+        }
+        ]
+    };
 
-//   fetch(webhookUrl, {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(mensagemJson),
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error("Erro ao enviar a mensagem.");
-//       }
-//       console.log("Mensagem enviada com sucesso!");
-//       document.getElementById("name").value = "";
-//       document.getElementById("email").value = "";
-//       document.getElementById("subject").value = "";
-//       document.getElementById("message").value = "";
-//     })
-//     .catch((error) => {
-//       console.error("Erro ao enviar a mensagem:", error);
-//     });
-// }
+    fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(mensagemJson),
+    })
+    .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao enviar a mensagem.");
+        }
+        console.log("Mensagem enviada com sucesso!");
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("message").value = "";
+    })
+    .catch((error) => {
+        console.error("Erro ao enviar a mensagem:", error);
+    });
+}
