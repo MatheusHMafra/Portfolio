@@ -5,11 +5,7 @@ const projetos = [
     },
 ];
 
-const miniprojetos = [
-    {        
-        nome: "Mastermind",        
-        url: "https://github.com/MatheusHMafra/Mastermind",    
-    },    
+const miniprojetos = [   
     {        
         nome: "Portfolio",        
         url: "https://github.com/MatheusHMafra/Portfolio",    
