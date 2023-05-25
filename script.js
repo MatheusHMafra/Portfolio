@@ -68,16 +68,28 @@ function createMiniProjetos() {
 
 createMiniProjetos();
 
+// Imagens
+
+function updateImagens() {
+    document.getElementById('imgens').classList.toggle('invert');
+    document.getElementById('imgens1').classList.toggle('invert');
+    document.getElementById('imgens2').classList.toggle('invert');
+    document.getElementById('imgens3').classList.toggle('invert');
+    document.getElementById('imgens4').classList.toggle('invert');
+}
+
 // Dark Mode on the site
 function toggleMode() {
-    //document.body.classList.toggle('light-mode');
     document.body.classList.toggle('dark-mode');
+    updateImagens();
     updateProjetos();
     updateMiniProjetos();
 }
 
 // Contate-me parte
 function enviarMensagem() {
+    const txtcolor = getComputedStyle(document.body).getPropertyValue('--accent-color').replace(/[^a-z0-9]/gi, '');
+
     const request = new XMLHttpRequest();
     const nome = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -93,7 +105,7 @@ function enviarMensagem() {
       },
       title: assunto,
       description: "Email: " + email + "\nMensagem: " + mensagem,
-      color: hexToDecimal("#ff0000")
+      color: hexToDecimal(txtcolor)
     }
     
     var params = {
@@ -102,7 +114,7 @@ function enviarMensagem() {
     }
     request.send(JSON.stringify(params));
     
-    // function that converts a color HEX to a valid Discord color
+    // Converter cor
     function hexToDecimal(hex) {
       return parseInt(hex.replace("#",""), 16)
     }
