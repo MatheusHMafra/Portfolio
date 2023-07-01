@@ -1,15 +1,22 @@
-const projetos = [
+const projetos = [   
+    {        
+        nome: "Portfolio",        
+        url: "https://github.com/MatheusHMafra/Portfolio",    
+    },
+    {
+        nome: "trabalho3",
+        url: "https://github.com/MatheusHMafra/trabalho3",
+];
+
+const miniprojetos = [
     {
         nome: "Mastermind",
         url: "https://github.com/MatheusHMafra/Mastermind",
     },
-];
-
-const miniprojetos = [   
-    {        
-        nome: "Portfolio",        
-        url: "https://github.com/MatheusHMafra/Portfolio",    
-    }
+    {
+        nome: "sudoku-game",
+        url: "https://github.com/MatheusHMafra/sudoku-game",
+    },
 ];
 
 // Projetos
