@@ -6,6 +6,7 @@ const projetos = [
     {
         nome: "trabalho3",
         url: "https://github.com/MatheusHMafra/trabalho3",
+    },
 ];
 
 const miniprojetos = [
