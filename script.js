@@ -76,16 +76,6 @@ function createMiniProjetos() {
 
 createMiniProjetos();
 
-// Imagens
-
-function updateImagens() {
-    document.getElementById('imgens').classList.toggle('invert');
-    document.getElementById('imgens1').classList.toggle('invert');
-    document.getElementById('imgens2').classList.toggle('invert');
-    document.getElementById('imgens3').classList.toggle('invert');
-    document.getElementById('imgens4').classList.toggle('invert');
-}
-
 // Dark Mode on the site
 function toggleMode() {
     document.body.classList.toggle('dark-mode');
